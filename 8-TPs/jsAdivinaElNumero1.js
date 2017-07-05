@@ -18,13 +18,28 @@ function comenzar()
 
 function verificar()
 {
+      numero=document.getElementById("numero").value;
       contadorIntentos = contadorIntentos+1;
-	if (numeroSecreto==document.getElementById("numero").value)
+	if (numeroSecreto==numero)
   {
-  alert("Usted es un ganador");
+  alert("Usted es un ganador y en tan solo " + contadorIntentos + " intentos" );
+  contadorIntentos=0;
   }
   else
   {
-   document.getElementById("intentos").value = contadorIntentos; 
-  }
+
+    if(numeroSecreto>numero)
+    {
+      alert("falta");
+    }
+
+    if(numeroSecreto<numero)
+    {
+      alert("Te pasaste");
+    }
+    
+     document.getElementById("intentos").value = contadorIntentos; 
+   }
+
+ 
 }
